@@ -30,11 +30,9 @@ const titleOfTableColumns = [
 
 interface TableWithPlaceholderProps {
     dashboardValues: any;
-    onVendorChange: () => void;
-    onDeleteVendor: (vendorId: number) => void;
 }
 
-const TableWithPlaceholder: React.FC<TableWithPlaceholderProps> = ({ dashboardValues, onVendorChange, onDeleteVendor }) => {
+const TableWithPlaceholder: React.FC<TableWithPlaceholderProps> = ({ dashboardValues }) => {
     const theme = useTheme();
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -113,10 +111,14 @@ const TableWithPlaceholder: React.FC<TableWithPlaceholderProps> = ({ dashboardVa
                                 </TableCell>
                                 <TableCell sx={singleTheme.tableStyles.primary.body.cell}>
                                     <IconButton vendorId={row.id}
-                                        onVendorChange={onVendorChange}
-                                        onDeleteVendor={onDeleteVendor}
+                                    // onVendorChange={onVendorChange}
+                                    // onDeleteVendor={onDeleteVendor}
                                     >
                                     </IconButton>
+                                    {/* <Menu anchorEl={dropdownAnchor} open={Boolean(dropdownAnchor)} onClose={handleDropdownClose}>
+                      <MenuItem onClick={handleDropdownClose}>Edit</MenuItem>
+                      <MenuItem onClick={handleDropdownClose}>Remove</MenuItem>
+                    </Menu> */}
                                 </TableCell>
                             </TableRow>
                         ))}
